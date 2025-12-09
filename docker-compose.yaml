@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  saam-db:
+    image: postgres:17.7
+    container_name: saam-db
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - saam-network
+
+  saam-api:
+    container_name: saam-api
+    build:
+      context: ./api
+      dockerfile: docker/Dockerfile.dev
+    networks:
+      - saam-network
+    depends_on:
+      - saam-db
+    volumes:
+      - ./api:/app
+    ports:
+      - "3000:3000"
+
+networks:
+  saam-network:
+    driver: bridge
+
+volumes:
+  postgres_data:
