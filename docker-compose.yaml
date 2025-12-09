@@ -28,6 +28,21 @@ services:
     ports:
       - "3000:3000"
 
+  saam-frontend:
+    container_name: saam-frontend
+    build:
+      context: ./front-end
+      dockerfile: docker/Dockerfile.dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./front-end:/app
+      - /app/node_modules
+    networks:
+      - saam-network
+    depends_on:
+      - saam-api
+
 networks:
   saam-network:
     driver: bridge
