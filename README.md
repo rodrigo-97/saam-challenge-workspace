@@ -4,43 +4,61 @@
 
 ### 1️⃣ Clonar os repositórios
 
-**API**
-Abra o terminal na raíz do projeto e rode:
+**API**\
+Abra o terminal na raiz do workspace e rode:
 
-```bash
+``` bash
 git clone git@github.com:rodrigo-97/saam-challenge-api.git api
 ```
 
-Isso vai criar uma pasta com todo o código da `api`
+**Front-end**\
+Ainda na raiz do workspace, rode:
 
-**Front-end**
-No mesmo diretório, rode:
-
-```bash
+``` bash
 git clone git@github.com:rodrigo-97/saam-challenge-front-end.git front-end
 ```
-Isso vai criar uma pasta com todo o código do `front-end`
 
+### 2️⃣ Criar chaves pública e privada para geração do JWT
 
-### 2️⃣ Subir os containers
-```bash
-docker-compose up
+As chaves devem ser criadas dentro de `api/src/main/resources/`
+
+**Chave privada**
+
+``` bash
+openssl genrsa -out api/src/main/resources/private.key 2048
 ```
 
-### 3️⃣ Estrutura final esperada
+**Chave pública**
 
-Após rodar tudo, você terá:
+``` bash
+openssl rsa -in api/src/main/resources/private.key -pubout -out api/src/main/resources/public.key
+```
+
+### 3️⃣ Subir os containers
+
+``` bash
+docker compose up
+```
+
+### 4️⃣ Estrutura final esperada
+
 ```
 workspace/
-├── api/            # Código da API
-└── front-end/      # Código do Front-end
+├── api/
+└── front-end/
 
-Containers em execução:
-- saam-db
-- saam-api
-- saam-frontend
+# Containers em execução:
+saam-db
+saam-api
+saam-frontend
 ```
 
-### 4️⃣ Acessando o sistema
-- **Front-end:** http://localhost:5173
-- **Api:** http://localhost:8080/swagger-ui
+### 5️⃣ Acessando o sistema
+- Front-end: http://localhost:5173/
+- API (Swagger): http://localhost:8080/swagger-ui.html
+
+O usuário padrão é
+```
+username = admin
+password = admin
+```
