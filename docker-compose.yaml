@@ -1,12 +1,11 @@
-version: "3.9"
-
 services:
   saam-db:
-    image: postgres:17.7
+    image: postgres:15
     container_name: saam-db
     environment:
       - POSTGRES_USER=admin
       - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=challenge
     ports:
       - "5432:5432"
     volumes:
@@ -23,10 +22,8 @@ services:
       - saam-network
     depends_on:
       - saam-db
-    volumes:
-      - ./api:/app
     ports:
-      - "3000:3000"
+      - "8080:8080"
 
   saam-frontend:
     container_name: saam-frontend
