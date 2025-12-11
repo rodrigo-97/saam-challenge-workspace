@@ -1,5 +1,10 @@
 # SAAM Auditoria - Workspace
 
+## Tecnologias utilizadas
+
+**Back-end:** Java, Spring Boot, PostgreSQL  
+**Front-end:** ReactJS com Vite.js
+
 ## Passos para subir o projeto
 
 ### 1️⃣ Clonar os repositórios
