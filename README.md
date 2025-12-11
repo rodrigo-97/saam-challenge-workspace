@@ -1,63 +1,62 @@
+
 # SAAM Auditoria - Workspace
 
 ## Tecnologias utilizadas
 
-**Back-end:** Java, Spring Boot, PostgreSQL  
-**Front-end:** ReactJS com Vite.js
+- **Back-end:** Java, Spring Boot, PostgreSQL
+- **Front-end:** ReactJS com Vite.js
 
 ## Passos para subir o projeto
 
-### 1️⃣ Clonar os repositórios
+### Passo 1: Clonar os repositórios
 
-**WORKSPACE**\
-Abra o terminal no local onde deseja clone o workspace e rode:
+Abra o terminal no local onde deseja clonar o workspace e rode:
 
 ```bash
 git clone git@github.com:rodrigo-97/saam-challenge-workspace.git
 ```
 
-Após a clonagem do repositório entre na pasta do workspace
+Entre na pasta do workspace:
+
 ```bash
 cd saam-challenge-workspace
 ```
 
-**API**\
-Abra o terminal na raiz do workspace e rode:
+**Clonar API**
 
 ```bash
 git clone git@github.com:rodrigo-97/saam-challenge-api.git api
 ```
 
-**Front-end**\
-Ainda na raiz do workspace, rode:
+**Clonar Front-end**
 
 ```bash
 git clone git@github.com:rodrigo-97/saam-challenge-front-end.git front-end
 ```
 
-### 2️⃣ Criar chaves pública e privada para geração do JWT
+### Passo 2: Gerar chaves pública e privada para JWT
 
-As chaves devem ser criadas dentro de `api/src/main/resources/`
+As chaves devem ser criadas dentro de `api/src/main/resources/`.
 
-**Chave privada**
+**Chave privada:**
 
 ```bash
 openssl genrsa -out api/src/main/resources/private.key 2048
 ```
 
-**Chave pública**
+**Chave pública:**
 
 ```bash
 openssl rsa -in api/src/main/resources/private.key -pubout -out api/src/main/resources/public.key
 ```
 
-### 3️⃣ Subir os containers
+### Passo 3: Subir os containers
 
 ```bash
 docker compose up
 ```
 
-### 4️⃣ Estrutura final esperada
+### Passo 4: Estrutura final esperada
 
 ```
 workspace/
@@ -70,12 +69,14 @@ saam-api
 saam-frontend
 ```
 
-### 5️⃣ Acessando o sistema
-- Front-end: http://localhost:5173/
-- API (Swagger): http://localhost:8080/swagger-ui.html
+### Passo 5: Acessando o sistema
 
-O usuário padrão é
+- **Front-end:** [http://localhost:5173/](http://localhost:5173/)  
+- **API (Swagger):** [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+
+### Passo 6: Usuário padrão
+
 ```
-username = admin
-password = adminadmin
+username: admin
+password: adminadmin
 ```
