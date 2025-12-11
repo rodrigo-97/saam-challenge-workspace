@@ -13,7 +13,7 @@
 Abra o terminal no local onde deseja clonar o workspace e rode:
 
 ```bash
-git clone git@github.com:rodrigo-97/saam-challenge-workspace.git
+git clone https://github.com/rodrigo-97/saam-challenge-workspace.git
 ```
 
 Entre na pasta do workspace:
@@ -25,13 +25,13 @@ cd saam-challenge-workspace
 **Clonar API**
 
 ```bash
-git clone git@github.com:rodrigo-97/saam-challenge-api.git api
+git clone https://github.com/rodrigo-97/saam-challenge-api.git api
 ```
 
 **Clonar Front-end**
 
 ```bash
-git clone git@github.com:rodrigo-97/saam-challenge-front-end.git front-end
+git clone https://github.com/rodrigo-97/saam-challenge-front-end.git front-end
 ```
 
 ### Passo 2: Gerar chaves pública e privada para JWT
