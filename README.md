@@ -9,17 +9,29 @@
 
 ### 1️⃣ Clonar os repositórios
 
+**WORKSPACE**\
+Abra o terminal no local onde deseja clone o workspace e rode:
+
+```bash
+git clone git@github.com:rodrigo-97/saam-challenge-workspace.git
+```
+
+Após a clonagem do repositório entre na pasta do workspace
+```bash
+cd saam-challenge-workspace
+```
+
 **API**\
 Abra o terminal na raiz do workspace e rode:
 
-``` bash
+```bash
 git clone git@github.com:rodrigo-97/saam-challenge-api.git api
 ```
 
 **Front-end**\
 Ainda na raiz do workspace, rode:
 
-``` bash
+```bash
 git clone git@github.com:rodrigo-97/saam-challenge-front-end.git front-end
 ```
 
@@ -29,19 +41,19 @@ As chaves devem ser criadas dentro de `api/src/main/resources/`
 
 **Chave privada**
 
-``` bash
+```bash
 openssl genrsa -out api/src/main/resources/private.key 2048
 ```
 
 **Chave pública**
 
-``` bash
+```bash
 openssl rsa -in api/src/main/resources/private.key -pubout -out api/src/main/resources/public.key
 ```
 
 ### 3️⃣ Subir os containers
 
-``` bash
+```bash
 docker compose up
 ```
 
