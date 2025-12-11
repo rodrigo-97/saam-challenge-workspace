@@ -60,5 +60,5 @@ saam-frontend
 O usuário padrão é
 ```
 username = admin
-password = admin
+password = adminadmin
 ```
